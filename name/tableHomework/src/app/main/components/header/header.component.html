@@ -1,2 +1,35 @@
-<p>header works!</p>
+<nz-page-header
+  class="site-page-header"
+  nzTitle="Random people"
+  >
+</nz-page-header>
+  <!-- <button nz-button nzType="primary" (click)="showAddModal()">Add</button> -->
 <!-- butonul de Add -->
+<button class="button-modal" nz-button [nzType]="'primary'" (click)="showModal()"><span>Add</span></button>
+<div >
+    <nz-modal [(nzVisible)]="isVisible" nzTitle="Enter information:" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+      <ng-container *nzModalContent>
+        <div class="forum">
+            <div class="modal-content">
+              <form (submit)="addPeople()">
+                <label>First Name:</label>
+                <input type="text" [(ngModel)]="newPeople.firstname" name="firstname">
+                <label>Last Name:</label>
+                <input type="text" [(ngModel)]="newPeople.lastname" name="lastname">
+                <label>Age:</label>
+                <input type="number" [(ngModel)]="newPeople.age" name="age">
+                <label>Address:</label>
+                <input type="text" [(ngModel)]="newPeople.address" name="address">
+                <label>Edited By:</label>
+                <input type="text" [(ngModel)]="newPeople.editedby" name="editedby">
+                <label>Action:</label>
+                <input type="text" [(ngModel)]="newPeople.action" name="action">
+              </form>
+            </div>
+          </div>
+      </ng-container>
+    </nz-modal>
+
+</div>
+
+

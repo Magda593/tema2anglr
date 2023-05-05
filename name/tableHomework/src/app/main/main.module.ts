@@ -10,6 +10,8 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { MainRoutingModule } from './main-routing.module';
 
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { MainRoutingModule } from './main-routing.module';
     NzButtonModule,
     NzPageHeaderModule,
     NzTableModule,
-    NzIconModule
+    NzIconModule,
+
+    NzModalModule,
+    FormsModule
   ]
 })
 export class MainModule { }

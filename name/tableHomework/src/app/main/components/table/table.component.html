@@ -1,1 +1,47 @@
-<p>table works!</p>
+<div class="table-container">
+  <div class="table-operations">
+    <button nz-button (click)="sortByAge()" nzType="primary">
+      Sort By Age
+    </button>
+  </div>
+
+  <nz-table #basicTable [nzData]="peopleList" [nzPageSize]="8">
+    <thead>
+      <tr>
+        <th nzLeft>First name</th>
+        <th>Last name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Edited by:</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <!-- ! pipe -->
+        <td nzLeft>{{ data.firstname | uppercase }}</td>
+        <td nzLeft>{{ data.lastname | uppercase }}</td>
+        <td>{{ data.age }}</td>
+        <td>{{ data.address }}</td>
+        <td>{{ data.editedby }}</td>
+        <td>{{ data.action }}</td>
+        <td>
+          <span
+            class="delete"
+            nz-icon
+            nzType="delete"
+            nzTheme="outline"
+            (click)="deletePeople(data)"
+          ></span>
+          <span
+          class="edit"
+            nz-icon
+            nzType="edit"
+            nzTheme="outline"
+            (click)="editPeople(data)"
+          ></span>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

@@ -1,6 +1,8 @@
 export interface People {
-  name: string;
+  firstname: string;
+  lastname:string
   age: number;
   address: string;
+  editedby: string;
   action: string;
 }

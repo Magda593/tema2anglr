@@ -1,0 +1,46 @@
+.forum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 400px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-top: 10px;
+      }
+
+      input {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+
+      button {
+        background-color: #1890ff;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+        padding: 10px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #096dd9;
+        }
+      }
+    }
+  }
+}
